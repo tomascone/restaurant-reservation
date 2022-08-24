@@ -44,7 +44,17 @@
                                     {{ $category->description }}
                                 </td>
                                 <td class="py-4 px-6">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a href="{{ route('admin.categories.edit', $category->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <form method="POst" action="{{ route('admin.categories.destroy', $category->id) }}"
+                                        onsubmit="return confirm('Are you sure?')">
+                                        @csrf
+
+                                        @method('DELETE')
+
+                                        <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline" type="submit">
+                                            Delete
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
 
