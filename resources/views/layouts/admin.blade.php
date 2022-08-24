@@ -17,9 +17,11 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
 
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body class="font-sans antialiased">
-        <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
+    <body class="font-sans antialiased flex bg-gray-900">
+        <div class="flex-col w-auto md:flex md:flex-row md:min-h-screen">
             <div @click.away="open = false" class="flex flex-col flex-shrink-0 w-full text-white bg-white md:w-64 dark:text-white dark:bg-gray-800 px-4" x-data="{ open: false }">
                 <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
                     <a href="#" class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">Flowtrail UI</a>
@@ -54,7 +56,7 @@
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
             
-                                        <x-dropdown-link class=" hover:bg-gray-100 focus:bg-gray-100 text-white hover:text-gray-800 focus:text-gray-800 block px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:shadow-outline" :href="route('logout')"
+                                        <x-dropdown-link class="block px-4 py-2 mt-2 text-sm font-semibold text-white bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white hover:text-white focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" :href="route('logout')"
                                                 onclick="event.preventDefault();
                                                             this.closest('form').submit();">
                                             {{ __('Log Out') }}
@@ -67,7 +69,7 @@
             </div>
         </div>
 
-        <main class="m-2 p-8">
+        <main class="m-2 p-8 flex-col w-full">
             {{ $slot }}
         </main>
     </body>
