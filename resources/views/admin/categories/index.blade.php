@@ -26,7 +26,7 @@
                                 Description
                             </th>
                             <th scope="col" class="py-3 px-6">
-                                Edit
+                                Action
                             </th>
                         </tr>
                     </thead>
@@ -45,7 +45,7 @@
                                 </td>
                                 <td class="py-4 px-6">
                                     <a href="{{ route('admin.categories.edit', $category->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                    <form method="POst" action="{{ route('admin.categories.destroy', $category->id) }}"
+                                    <form method="POST" action="{{ route('admin.categories.destroy', $category->id) }}"
                                         onsubmit="return confirm('Are you sure?')">
                                         @csrf
 
