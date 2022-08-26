@@ -19,6 +19,8 @@
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
         <script src="https://cdn.tailwindcss.com"></script>
+
+        <script src="https://unpkg.com/flowbite@1.5.2/dist/datepicker.js"></script>
     </head>
     <body class="font-sans antialiased flex bg-gray-900">
         <div class="flex-col w-auto md:flex md:flex-row md:min-h-screen">
